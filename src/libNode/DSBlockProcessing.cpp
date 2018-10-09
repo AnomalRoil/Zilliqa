@@ -612,6 +612,11 @@ bool Node::ProcessDSBlock(const vector<unsigned char>& message,
     LOG_GENERAL(INFO, member.second);
   }
 
+#if 0  // clark
+  BlockStorage::GetBlockStorage().PutDSCommittee(
+      m_mediator.m_DSCommittee, m_mediator.m_ds->m_consensusLeaderID);
+#endif
+
   return true;
 }
 

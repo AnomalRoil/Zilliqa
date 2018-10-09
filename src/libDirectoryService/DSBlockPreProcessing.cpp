@@ -125,7 +125,7 @@ unsigned int DirectoryService::ComposeDSBlock(
     m_pendingDSBlock.reset(new DSBlock(
         DSBlockHeader(dsDifficulty, difficulty, prevHash,
                       m_mediator.m_selfKey.second, blockNum, get_time_as_int(),
-                      SWInfo(), powDSWinners, DSBlockHashSet()),
+                      m_mediator.m_curSWInfo, powDSWinners, DSBlockHashSet()),
         CoSignatures(m_mediator.m_DSCommittee->size())));
     m_pendingDSBlock->SetBlockHash(m_pendingDSBlock->GetHeader().GetMyHash());
   }
